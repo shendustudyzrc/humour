@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- 映射 -->
+ <mapper namespace="com.mybatis.PhilosophyMapper">
+ <!-- 查找列表总数 -->
+ <select id="selectCountById" resultType="int">
+   select count(1) from philosophy;
+ </select>
+ 
+ <!-- 查找列表 -->
+ <select id="selectUserByMap" resultType="Philosophy" parameterType="map"> 
+    select * from philosophy limit #{start},#{end};
+ </select>
+ <!-- 管理员新增用户 -->
+ <insert id="insertUserByAdmin" parameterType="Philosophy" useGeneratedKeys="true">
+    insert into philosophy(title,content) values (#{title},#{content});
+ </insert>
+<!--  更新用户 -->
+ <update id="updateUser" parameterType="Philosophy">
+    update philosophy set title=#{title},content=#{content} where id=#{id};
+ </update>
+<!-- 删除作业 -->
+ <delete id="deleteUserById" parameterType="int">
+    delete from philosophy where id=#{id};
+ </delete>
+ <!-- 根据Id查找记录 -->
+ <select id="selectOneById"  resultType="Philosophy" parameterType="int">
+    select*from philosophy where id=#{id};
+ </select>
+
+ </mapper>

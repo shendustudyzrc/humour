@@ -62,14 +62,14 @@ public class PhilosophyController {
 					sb.append("["+i+"]");
 				}else{
 				
-     			sb.append("<a href='http://localhost:9090/Humour/web/philosophy/philosophyManage?page="+ i+ "'>"+i+"</a>");
+     			sb.append("<a href='http://localhost:9091/Humour/web/philosophy/philosophyManage?page="+ i+ "'>"+i+"</a>");
 		
 				}
 				
 				sb.append(" ");
 			}
 		  session.setAttribute("bar", sb.toString());
-	      response.sendRedirect("http://localhost:9090/Humour/PhilosophyList.jsp");
+	      response.sendRedirect("http://localhost:9091/Humour/PhilosophyList.jsp");
    }
 	  
 	  @ResponseBody
@@ -147,13 +147,13 @@ public class PhilosophyController {
 					sb.append("["+i+"]");
 				}else{
 				
-     			sb.append("<a href='http://localhost:9090/Humour/web/philosophy/page_show?page="+ i+ "'>"+i+"</a>");
+     			sb.append("<a href='http://localhost:9091/Humour/web/philosophy/page_show?page="+ i+ "'>"+i+"</a>");
 		
 				}
 				
 				sb.append(" ");
 			}
 		  session.setAttribute("bar", sb.toString());
-	      response.sendRedirect("http://localhost:9090/Humour/Philosophy.jsp");
+	      response.sendRedirect("http://localhost:9091/Humour/Philosophy.jsp");
    }
 }

@@ -50,9 +50,9 @@ public class UserController {
 		    }
 	     b=ius.insertUserDao(user);
 		 if(b==true){
-			 response.sendRedirect("http://localhost:9090/Humour/login.jsp");
+			 response.sendRedirect("http://localhost:9091/Humour/login.jsp");
 		 }else{
-		     response.sendRedirect("http://localhost:9090/Humour/error.jsp");
+		     response.sendRedirect("http://localhost:9091/Humour/error.jsp");
 		 }
 	}
 	
@@ -74,11 +74,11 @@ public class UserController {
 		  session.setAttribute("blogId", blogId);*/
 		  session.setAttribute("username", name);
 		  if(ub==true){
-			  response.sendRedirect("http://localhost:9090/Humour/index.jsp");
+			  response.sendRedirect("http://localhost:9091/Humour/index.jsp");
 		  }else if(mb==true){
-			  response.sendRedirect("http://localhost:9090/Humour/adminIndex.jsp");
+			  response.sendRedirect("http://localhost:9091/Humour/adminIndex.jsp");
 		  }else{
-			  response.sendRedirect("http://localhost:9090/Humour/error.jsp");
+			  response.sendRedirect("http://localhost:9091/Humour/error.jsp");
 		  }
 	}
 	
@@ -122,14 +122,14 @@ public class UserController {
 					sb.append("["+i+"]");
 				}else{
 				
-     			sb.append("<a href='http://localhost:9090/HelloJavaWorld/web/student/StudentInformationListjsp?page="+ i+ "'>"+i+"</a>");
+     			sb.append("<a href='http://localhost:9091/HelloJavaWorld/web/student/StudentInformationListjsp?page="+ i+ "'>"+i+"</a>");
 		
 				}
 			
 				sb.append(" ");
 			}
 		  session.setAttribute("bar", sb.toString());
-	      response.sendRedirect("http://localhost:9090/HelloJavaWorld/StudentInformationList.jsp");
+	      response.sendRedirect("http://localhost:9091/HelloJavaWorld/StudentInformationList.jsp");
    }
 	
 	  @ResponseBody

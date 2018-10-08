@@ -63,14 +63,14 @@ public class QuoteController {
 					sb.append("["+i+"]");
 				}else{
 				
-     			sb.append("<a href='http://localhost:9090/Humour/web/quote/quoteManage?page="+ i+ "'>"+i+"</a>");
+     			sb.append("<a href='http://localhost:9091/Humour/web/quote/quoteManage?page="+ i+ "'>"+i+"</a>");
 		
 				}
 				
 				sb.append(" ");
 			}
 		  session.setAttribute("bar", sb.toString());
-	      response.sendRedirect("http://localhost:9090/Humour/QuoteList.jsp");
+	      response.sendRedirect("http://localhost:9091/Humour/QuoteList.jsp");
    }
 	  
 	  @ResponseBody
@@ -147,11 +147,11 @@ public class QuoteController {
 					
 					sb.append("["+i+"]");
 				}else{	
-     			sb.append("<a href='http://localhost:9090/Humour/web/quote/page_show?page="+ i+ "'>"+i+"</a>");
+     			sb.append("<a href='http://localhost:9091/Humour/web/quote/page_show?page="+ i+ "'>"+i+"</a>");
 			  }
 				sb.append(" ");
 			}
 		  session.setAttribute("bar", sb.toString());
-	      response.sendRedirect("http://localhost:9090/Humour/Quote.jsp");
+	      response.sendRedirect("http://localhost:9091/Humour/Quote.jsp");
    }
 }

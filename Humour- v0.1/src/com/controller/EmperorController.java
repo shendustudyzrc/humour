@@ -61,14 +61,14 @@ public class EmperorController {
 					sb.append("["+i+"]");
 				}else{
 				
-     			sb.append("<a href='http://localhost:9090/Humour/web/emperor/emperorManage?page="+ i+ "'>"+i+"</a>");
+     			sb.append("<a href='http://localhost:9091/Humour/web/emperor/emperorManage?page="+ i+ "'>"+i+"</a>");
 		
 				}
 				
 				sb.append(" ");
 			}
 		  session.setAttribute("bar", sb.toString());
-	      response.sendRedirect("http://localhost:9090/Humour/EmperorList.jsp");
+	      response.sendRedirect("http://localhost:9091/Humour/EmperorList.jsp");
    }
 	  @ResponseBody
 	  @RequestMapping(method=RequestMethod.POST)
@@ -103,7 +103,7 @@ public class EmperorController {
 			  List<Emperor> list=new LinkedList<Emperor>();
 			  list.add(emperor);
 			  session.setAttribute("list", list);
-			 /* response.sendRedirect("http://localhost:9090/Homework/HomeworkList.jsp");*/
+			 
 		  }
 	 }
 	  
@@ -149,13 +149,13 @@ public class EmperorController {
 					sb.append("["+i+"]");
 				}else{
 				
-     			sb.append("<a href='http://localhost:9090/Humour/web/emperor/page_show?page="+ i+ "'>"+i+"</a>");
+     			sb.append("<a href='http://localhost:9091/Humour/web/emperor/page_show?page="+ i+ "'>"+i+"</a>");
 		
 				}
 				
 				sb.append(" ");
 			}
 		  session.setAttribute("bar", sb.toString());
-	      response.sendRedirect("http://localhost:9090/Humour/Emperor.jsp");
+	      response.sendRedirect("http://localhost:9091/Humour/Emperor.jsp");
    }
 }

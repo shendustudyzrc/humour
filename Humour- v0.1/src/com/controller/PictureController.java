@@ -62,14 +62,14 @@ public class PictureController {
 					sb.append("["+i+"]");
 				}else{
 				
-     			sb.append("<a href='http://localhost:9090/Humour/web/picture/pictureManage?page="+ i+ "'>"+i+"</a>");
+     			sb.append("<a href='http://localhost:9091/Humour/web/picture/pictureManage?page="+ i+ "'>"+i+"</a>");
 		
 				}
 				
 				sb.append(" ");
 			}
 		  session.setAttribute("bar", sb.toString());
-	      response.sendRedirect("http://localhost:9090/Humour/PictureList.jsp");
+	      response.sendRedirect("http://localhost:9091/Humour/PictureList.jsp");
    }
 	  
 	  @ResponseBody
@@ -148,13 +148,13 @@ public class PictureController {
 					sb.append("["+i+"]");
 				}else{
 				
-     			sb.append("<a href='http://localhost:9090/Humour/web/picture/page_show?page="+ i+ "'>"+i+"</a>");
+     			sb.append("<a href='http://localhost:9091/Humour/web/picture/page_show?page="+ i+ "'>"+i+"</a>");
 		
 				}
 				
 				sb.append(" ");
 			}
 		  session.setAttribute("bar", sb.toString());
-	      response.sendRedirect("http://localhost:9090/Humour/Picture.jsp");
+	      response.sendRedirect("http://localhost:9091/Humour/Picture.jsp");
    }
 }
