@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  <!-- 根标签 -->
+  <configuration>
+   <typeAliases>
+     <typeAlias alias="President" type="com.domain.President"/>
+     <typeAlias alias="Emperor" type="com.domain.Emperor"/>
+     <typeAlias alias="Philosophy" type="com.domain.Philosophy"/>
+     <typeAlias alias="Picture" type="com.domain.Picture"/>
+     <typeAlias alias="Quote" type="com.domain.Quote"/>
+     <typeAlias alias="User" type="com.domain.User"/>
+     <typeAlias alias="Manage" type="com.domain.Manage"/>
+   </typeAliases>
+  <!-- 配置数据源相关信息 -->
+  <environments default="development">
+    <environment id="development">
+     <transactionManager type="JDBC"/>
+     <dataSource type="POOLED">
+       <property name="driver" value="com.mysql.jdbc.Driver"/>
+       <property name="url" value="jdbc:mysql://localhost:3306/humours?serverTimezone=UTC&amp;useSSL=true"/>
+       <property name="username" value="root"/>
+       <property name="password" value="123456"/>
+     </dataSource>
+    </environment>
+   </environments> 
+   <mappers>
+     <mapper resource="com/mybatis/President.xml"></mapper>
+     <mapper resource="com/mybatis/Emperor.xml"></mapper>
+     <mapper resource="com/mybatis/Philosophy.xml"></mapper>
+     <mapper resource="com/mybatis/Picture.xml"></mapper>
+     <mapper resource="com/mybatis/Quote.xml"></mapper>
+     <mapper resource="com/mybatis/User.xml"></mapper>
+     <mapper resource="com/mybatis/Manage.xml"></mapper>
+   </mappers>
+</configuration>
