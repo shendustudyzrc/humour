@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -61,14 +61,14 @@ public class PresidentController {
 					sb.append("["+i+"]");
 				}else{
 				
-     			sb.append("<a href='http://localhost:9091/Humour/web/president/presidentManage?page="+ i+ "'>"+i+"</a>");
+     			sb.append("<a href='http://localhost:9090/Humour/web/president/presidentManage?page="+ i+ "'>"+i+"</a>");
 		
 				}
 				
 				sb.append(" ");
 			}
 		  session.setAttribute("bar", sb.toString());
-	      response.sendRedirect("http://localhost:9091/Humour/PresidentList.jsp");
+	      response.sendRedirect("http://localhost:9090/Humour/PresidentList.jsp");
    }
 	  @ResponseBody
 	  @RequestMapping(method=RequestMethod.POST)
@@ -146,12 +146,12 @@ public class PresidentController {
 					sb.append("["+i+"]");
 				}else{
 				
-     			sb.append("<a href='http://localhost:9091/Humour/web/president/page_show?page="+ i+ "'>"+i+"</a>");
+     			sb.append("<a href='http://localhost:9090/Humour/web/president/page_show?page="+ i+ "'>"+i+"</a>");
 				}
 				sb.append(" ");
 			}
 		  session.setAttribute("bar", sb.toString());
-	      response.sendRedirect("http://localhost:9091/Humour/President.jsp");
+	      response.sendRedirect("http://localhost:9090/Humour/President.jsp");
 	 }
 }
 
