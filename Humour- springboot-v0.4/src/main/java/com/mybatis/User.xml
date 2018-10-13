@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- 映射 -->
+ <mapper namespace="com.mybatis.UserMapper">
+ <!-- 增加 电话注册-->
+ <insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+   insert into user(username,tellphone,password) values(#{username},#{tellphone},#{password});
+ </insert>
+  <!-- 增加 邮箱注册-->
+ <insert id="insertUserByEmail" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+   insert into user(username,email,password) values(#{username},#{email},#{password});
+ </insert>
+ <!-- 根据id号进行查找 -->
+ <select id="selectUserLogin" parameterType="User" resultType="User">
+   select username,password from user where username=#{username} and password=#{password};
+ </select>
+  <!-- 根据name进行查找 -->
+ <select id="selectIdByName" parameterType="java.lang.String" resultType="int">
+    select id from user where username=#{username};
+ </select>
+ <!-- 查找列表总数 -->
+ <select id="selectCountById" resultType="int">
+   select count(1) from user;
+ </select>
+ <!-- 查找列表 -->
+ <select id="selectUserByMap" resultType="User" parameterType="map"> 
+    select * from user limit #{start},#{end};
+ </select>
+ <!-- 管理员新增用户 -->
+ <insert id="insertUserByAdmin" parameterType="User" useGeneratedKeys="true">
+    insert into user(username,password,sex,hobby) values (#{username},#{password},#{sex},#{hobby});
+ </insert>
+  <!-- 删除 -->
+ <delete id="deleteUserById" parameterType="int">
+    delete from user where id=#{id};
+ </delete>
+<!--  更新用户 -->
+ <update id="updateUser" parameterType="User">
+    update user set username=#{username},password=#{password},gender=#{gender},hobby=#{hobby} where id=#{id};
+ </update>
+ <!--  用户修改密码 -->
+ <update id="updatePassword" parameterType="User">
+    update user set password=#{password} where username=#{username}
+ </update>
+  <!--  查找用户 -->
+ <select id="selectUserByUsername" resultType="User" parameterType="User" >
+    select* from user where username=#{username}
+ </select>
+  <!--  根据姓名更改用户信息 -->
+ <update id="updateUserByUsername"  parameterType="User" >
+    update user set email=#{email},nickname=#{nickname},phone=#{phone},real_name=#{real_name},id_card=#{id_card},gender=#{gender} where username=#{username};
+ </update>
+   <!--  根据姓名更改头像 -->
+ <update id="updateImageByUsername"  parameterType="User" >
+    update user set image_path=#{image_path} where username=#{username};
+ </update>
+
+ </mapper>
