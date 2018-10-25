@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%
+  String contextPath=request.getContextPath();
+%>
 <html>
 <head>
- <title>L&amp;S-真爱之钻列表</title>
+ <title>脑洞网</title>
  <link href="css/same.css?v=1.3.7.2" type="text/css" rel="stylesheet" />
  <link href="css/dr.css?v=1.3.5.0" type="text/css" rel="stylesheet" /> 
  <script src="js/jquery.js" type="text/javascript"></script> 
@@ -53,8 +56,8 @@ color:gray;
 						<li><a rel="nofollow" href="login.jsp">登录</a><em>|</em></li>
 						<li><a rel="nofollow" href="reg.jsp">注册</a><em>|</em></li>
 					</c:otherwise>
-					</c:choose>
-        <li><a rel="nofollow" href="MemberIndexServlet">我的LS</a></li>
+		</c:choose>
+        <li><a rel="nofollow" href="MemberIndexServlet">我的Humour</a></li>
         <li class="headed"><em class="icon shooping"></em><a rel="nofollow" href="com.services.Shopping_CartServlet?control=b">购物车</a><i></i></li> 
       </ul> 
       </div>
@@ -71,54 +74,34 @@ color:gray;
 					<li><a href="index.jsp">首页</a></li>
 					<li><a href="brand.jsp">品牌文化</a></li>
 					<li><a style="font-family: arial"
-						href="searchAction?classes=真爱之钻">真爱之钻</a>
+						href="<%=contextPath%>/Search/SearchController?classes=幽默的书">幽默的书</a>
 						<div class="nav-div">
 							<div class="navdiv_top">
 								<div class="navdiv-right">
 									<p>
-										<a href="searchAction?classes=真爱之钻"> 查看所有款</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=幽默的书"> 查看所有款</a>
 									</p>
 									<p>
-										<a href="searchAction?classes=恋人絮语">恋人絮语</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=中国式幽默">中国式幽默</a>
 									</p>
 									<p>
-										<a href="searchAction?classes=爱的轮回">爱的轮回</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=美国式幽默">美国式幽默</a>
 									</p>
 									<p>
-										<a href="searchAction?classes=爱之守护">爱之守护</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=德国式幽默">德国式幽默</a>
 									</p>
 									<p>
-										<a href="searchAction?classes=爱的星芒">爱的星芒</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=英国式幽默">英国式幽默</a>
+									</p>
+									<p>
+										<a href="<%=contextPath%>/Search/SearchController?classes=俄国式幽默">俄国式幽默</a>
 									</p>
 								</div>
 
 							</div>
 							<div class="navdiv_bottom"></div>
 						</div></li>
-					<li><a style="font-family: arial"
-						href="searchAction?classes=友谊之钻">友谊之钻</a>
-						<div class="nav-div">
-							<div class="navdiv_top">
-								<div class="navdiv-right special_right noborder">
-									<p>
-										<a href="searchAction?classes=友谊之钻">查看所有款</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=天使之吻">天使之吻</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=梦之幻想">梦之幻想</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=永恒之心">永恒之心</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=星月相伴">星月相伴</a>
-									</p>
-								</div>
-							</div>
-							<div class="navdiv_bottom"></div>
-						</div></li>
+					
 
 				</ul>
 			</div>
@@ -142,7 +125,7 @@ color:gray;
 					<div class="zbk_top spalid">
 						<span>您当前的位置：</span> <span id="website_SiteMapPath1"><a
 							href="#website_SiteMapPath1_SkipLink"></a><span> <a
-								target="_blank" href="index.html">Love Swear</a>
+								target="_blank" href="index.html">脑洞网</a>
 						</span><span> <em>&gt;</em>
 						</span><span> <span>${sessionScope.big_category.classes }</span>
 						</span><span> <span>${sessionScope.small }</span>
@@ -152,9 +135,8 @@ color:gray;
 					<div class="zbk_center">
 						<!--banner左边-->
 						<div class="zbkc-left">
-							<h3>求婚钻戒领导品牌</h3>
-							<h2>男士定制一枚</h2>
-							<h4>寓意：一生&middot;唯一&middot;真爱</h4>
+							<h3>脑洞网，专注程序员的脑洞大开</h3>
+							<h4>寓意：AI也幽默</h4>
 							<div class="button">
 							</div>
 						</div>
@@ -174,18 +156,21 @@ color:gray;
 						<div class="drcho_top">
 							<ul class="drchoose_ul">
 								<li class="choose_hover" id="ucser_all"><span><a
-										href="searchAction?classes=${sessionScope.big_category.classes }">${sessionScope.big_category.classes }</a></span></li>
+										href="<%=contextPath%>/Search/SearchController?classes=${sessionScope.big_category.classes }">${sessionScope.big_category.classes }</a></span></li>
 								<li id="ucser_forever"><span><a
-										href="searchAction?classes=${sessionScope.small_category[0].classes }">${sessionScope.small_category[0].classes }</a></span>
+										href="<%=contextPath%>/Search/SearchController?classes=${sessionScope.small_category[0].classes }">${sessionScope.small_category[0].classes }</a></span>
 								</li>
 								<li id="ucser_myheart"><span><a
-										href="searchAction?classes=${sessionScope.small_category[1].classes }">${sessionScope.small_category[1].classes }</a></span>
+										href="<%=contextPath%>/Search/SearchController?classes=${sessionScope.small_category[1].classes }">${sessionScope.small_category[1].classes }</a></span>
 								</li>
 								<li id="ucser_swear"><span><a
-										href="searchAction?classes=${sessionScope.small_category[2].classes }">${sessionScope.small_category[2].classes }</a></span>
+										href="<%=contextPath%>/Search/SearchController?classes=${sessionScope.small_category[2].classes }">${sessionScope.small_category[2].classes }</a></span>
 								</li>
 								<li id="ucser_justyou"><span><a
-										href="zsearchAction?classes=${sessionScope.small_category[3].classes }">${sessionScope.small_category[3].classes }</a></span>
+										href="<%=contextPath%>/Search/SearchController?classes=${sessionScope.small_category[3].classes }">${sessionScope.small_category[3].classes }</a></span>
+								</li>
+								<li id="ucser_justq"><span><a
+										href="<%=contextPath%>/Search/SearchController?classes=${sessionScope.small_category[4].classes }">${sessionScope.small_category[4].classes }</a></span>
 								</li>
 							</ul>
 						</div>
@@ -245,7 +230,7 @@ color:gray;
 							<li>
 								<div class="by_top">
 									<a target="_blank"
-										href="com.services.DetailServlet?goods_name=${goods.name }">11</a>
+										href="../detail/detailList?goods_name=${goods.name }">11</a>
 									<!-- 这里写商品详情页地址 -->
 									<div class="bything-one">
 										<img width="236px" height="236" alt="${goods.describes }"

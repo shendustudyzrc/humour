@@ -1,6 +1,8 @@
 package com.service.imp;
 import java.io.IOException;
 import java.io.Reader;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -11,6 +13,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Service;
+
 import com.domain.User;
 import com.service.IUserService;
 @Service
@@ -57,13 +60,14 @@ public class UserServiceImp implements IUserService{
 			return b;
 	}
 	@Override
-	public int selectIdByName(String username) throws SQLException {
-		int a=0;
+	public long selectIdByName(String username) throws SQLException {
+		long a=0;
 		/*HashMap<String,String> map=new LinkedHashMap<String,String>();*/
 		SqlSession session=null;
 	    session=sqlSessionFactory.openSession();
-	    /*a=Integer.parseInt((String) session.selectOne("com.domain.UserMapper.selectIdByName", username));*/
-		session.commit();
+	    User user=session.selectOne("com.mybatis.UserMapper.selectIdByName", username);
+		a=user.getId();
+	    session.commit();
 	    return a;
 	}
 	@Override

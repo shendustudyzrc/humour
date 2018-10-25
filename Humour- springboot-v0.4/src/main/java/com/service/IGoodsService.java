@@ -9,4 +9,6 @@ public interface IGoodsService {
 	List<Goods> selectGoodsBySmallDao(Small_Category small) throws SQLException;
 	//通过搜索框搜索
 	List<Goods> selectDGoodsByBlockDao(String block) throws SQLException;
+	//通过商品名搜索
+    Goods selectGoodsByGoodName(String name) throws SQLException;
  }

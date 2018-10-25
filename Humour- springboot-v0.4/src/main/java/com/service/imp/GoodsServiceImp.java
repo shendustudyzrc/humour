@@ -40,4 +40,12 @@ public class GoodsServiceImp implements IGoodsService{
 		session.commit();
 		return goods;
 	}
+	@Override
+	public Goods selectGoodsByGoodName(String name) throws SQLException {
+		SqlSession session=null;
+		session=sqlSessionFactory.openSession();
+		Goods goods=session.selectOne("com.mybatis.GoodsMapper.selectGoodsByGoodsName",name);
+		session.commit();
+		return goods;
+	}
 }

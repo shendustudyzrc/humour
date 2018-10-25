@@ -2,19 +2,25 @@ package com.service.imp;
 import java.io.IOException;
 import java.io.Reader;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.dao.UserDao;
 import com.domain.Big_Category;
 import com.domain.Small_Category;
 import com.service.ISmall_CategoryService;
 @Service
 public class Small_CategoryServiceImp implements ISmall_CategoryService{
-    private static SqlSessionFactory sqlSessionFactory;
+	@Autowired
+    private UserDao userDao;
+	
+	private static SqlSessionFactory sqlSessionFactory;
     private static Reader reader;
     static{
 		  try {
@@ -45,12 +51,13 @@ public class Small_CategoryServiceImp implements ISmall_CategoryService{
 	public long selectBig_idById(long id) throws SQLException {
 		SqlSession session=null;
 		session=sqlSessionFactory.openSession();
-		HashMap<String,Object> map=new HashMap<String,Object>();
-		map.put("id", id);
-//		/*long big_id=session.selectOne("com.mybatis.Small_CategoryMapper.selectSmall_CategoryByBig_id",id);*/
-		HashMap<Object,Object> map1=(HashMap<Object, Object>) session.selectMap("com.mybatis.Small_CategoryMapper.selectSmall_CategoryByBig_id", "id");
-	
+		Optional<Small_Category> small_category=userDao.findById(id);
+		Object big_id1=userDao.findById(id);
+		System.out.println(big_id1+"aaaaaaaa");
+		System.out.println(small_category.get().getBig_category()+"hahahah");
+		
+		long big_id=small_category.get().getBig_id();
 		session.commit();
-		return (long) map1.get("big_id");
+		return (long)(big_id);
 	}
 }

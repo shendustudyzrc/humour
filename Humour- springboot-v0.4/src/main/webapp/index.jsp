@@ -50,7 +50,7 @@
 					</c:otherwise>
 					</c:choose>
         <li><a rel="nofollow" href="member_index.jsp">我的Humour</a></li>
-        <li class="headed"><em class="icon shooping"></em><a rel="nofollow" href="com.services.Shopping_CartServlet?control=b">购物车</a><i></i></li> 
+        <li class="headed"><em class="icon shooping"></em><a rel="nofollow" href="<%=contextPath%>/shopping_Cart/shoping_CartPage?control=b">购物车</a><i></i></li> 
       </ul> 
       </div>
      <!--头部右边end--> 
@@ -65,56 +65,36 @@
 								<!--导航的左边-->
 				<ul class="nav-ul fl">
 					<li><a href="index.jsp">首页</a></li>
-					<li><a href="brand.jsp">品牌文化</a></li>
+					<li><a href="brand.jsp">幽默文化</a></li>
 					<li><a style="font-family: arial"
-						href="searchAction?classes=真爱之钻">真爱之钻</a>
+						href="<%=contextPath%>/Search/SearchController?classes=幽默的书">幽默的书</a>
 						<div class="nav-div">
 							<div class="navdiv_top">
 								<div class="navdiv-right">
 									<p>
-										<a href="<%=contextPath%>/Search/SearchController?classes=真爱之钻"> 查看所有款</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=幽默的书"> 查看所有款</a>
 									</p>
 									<p>
-										<a href="<%=contextPath%>/Search/SearchController?classes=恋人絮语">恋人絮语</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=中国式幽默">中国式幽默</a>
 									</p>
 									<p>
-										<a href="<%=contextPath%>/Search/SearchController?classes=爱的轮回">憨豆先生</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=美国式幽默">美国式幽默</a>
 									</p>
 									<p>
-										<a href="<%=contextPath%>/Search/SearchController?classes=爱之守护">周星驰</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=德国式幽默">德国式幽默</a>
 									</p>
 									<p>
-										<a href="<%=contextPath%>/Search/SearchController?classes=爱的星芒">蔡康永</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=英国式幽默">英国式幽默</a>
+									</p>
+									<p>
+										<a href="<%=contextPath%>/Search/SearchController?classes=俄国式幽默">俄国式幽默</a>
 									</p>
 								</div>
 
 							</div>
 							<div class="navdiv_bottom"></div>
 						</div></li>
-					<li><a style="font-family: arial"
-						href="searchAction?classes=友谊之钻">友谊之钻</a>
-						<div class="nav-div">
-							<div class="navdiv_top">
-								<div class="navdiv-right special_right noborder">
-									<p>
-										<a href="searchAction?classes=友谊之钻">查看所有款</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=天使之吻">天使之吻</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=梦之幻想">梦之幻想</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=永恒之心">永恒之心</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=星月相伴">星月相伴</a>
-									</p>
-								</div>
-							</div>
-							<div class="navdiv_bottom"></div>
-						</div></li>
+					
 
 				</ul>
 				<!--导航的右边-->
@@ -174,14 +154,10 @@
 					<!--tab选项卡ul-->
 					<div class="ultab_all">
 						<ul class="ul-tab">
-							<li><span><a href="searchAction?classes=恋人絮语">恋人絮语</a></span></li>
-							<li><span><a href="searchAction?classes=爱的轮回">爱的轮回</a></span></li>
-							<li><span><a href="searchAction?classes=爱之守护">爱之守护</a></span></li>
-							<li><span><a href="searchAction?classes=爱的星芒">爱的星芒</a></span></li>
-							<li><span><a href="searchAction?classes=天使之吻">天使之吻</a></span></li>
-							<li><span><a href="searchAction?classes=梦之幻想">梦之幻想</a></span></li>
-							<li><span><a href="searchAction?classes=永恒之心">永恒之心</a></span></li>
-							<li><span><a href="searchAction?classes=星月相伴">星月相伴</a></span></li>
+							<li><span><a href="<%=contextPath%>/Search/SearchController?classes=中国式幽默">中国式幽默</a></span></li>
+							<li><span><a href="<%=contextPath%>/Search/SearchController?classes=美国式幽默">美国式幽默</a></span></li>
+							<li><span><a href="<%=contextPath%>/Search/SearchController?classes=德国式幽默">德国式幽默</a></span></li>
+							<li><span><a href="<%=contextPath%>/Search/SearchController?classes=英国式幽默">英国式幽默</a></span></li>
 						</ul>
 						<!--进度条-->
 						<div class="ul_jdt">

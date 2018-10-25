@@ -9,7 +9,7 @@ public interface IUserService {
 		
 		public boolean select(String username,String password) throws SQLException;
 		
-		public int selectIdByName(String username)throws SQLException;
+		public long selectIdByName(String username)throws SQLException;
 		
 		public HashMap<String, String> selectCount()throws SQLException;
 		
@@ -28,4 +28,5 @@ public interface IUserService {
 		public boolean updateUserByUsername(User user)throws SQLException;
 		
 		public boolean updateImageByUsername(User user)throws SQLException;
+		
 }

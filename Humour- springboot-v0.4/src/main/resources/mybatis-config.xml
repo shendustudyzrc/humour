@@ -15,6 +15,13 @@
       <typeAlias alias="Big_Category" type="com.domain.Big_Category"/>
      <typeAlias alias="Small_Category" type="com.domain.Small_Category"/>
      <typeAlias alias="Goods" type="com.domain.Goods"/>
+     <typeAlias alias="Image" type="com.domain.Image"/>
+     <typeAlias alias="Shopping_Cart" type="com.domain.Shopping_Cart"/>
+     <typeAlias alias="Orders" type="com.domain.Orders"/>
+     <typeAlias alias="Comment" type="com.domain.Comment"/>
+     <typeAlias alias="Address" type="com.domain.Address"/>
+     <typeAlias alias="Province" type="com.domain.Province"/>
+     <typeAlias alias="City" type="com.domain.City"/>
    </typeAliases>
   <!-- 配置数据源相关信息 -->
   <environments default="development">
@@ -39,5 +46,12 @@
      <mapper resource="com/mybatis/Small_Category.xml"></mapper>
      <mapper resource="com/mybatis/Big_Category.xml"></mapper>
      <mapper resource="com/mybatis/Goods.xml"></mapper>
+     <mapper resource="com/mybatis/Image.xml"></mapper>
+     <mapper resource="com/mybatis/Shopping_Cart.xml"></mapper>
+     <mapper resource="com/mybatis/Orders.xml"></mapper>
+     <mapper resource="com/mybatis/Comment.xml"></mapper>
+     <mapper resource="com/mybatis/Address.xml"></mapper>
+     <mapper resource="com/mybatis/Province.xml"></mapper>
+     <mapper resource="com/mybatis/City.xml"></mapper>
    </mappers>
 </configuration>

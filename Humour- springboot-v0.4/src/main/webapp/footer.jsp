@@ -69,7 +69,7 @@
      </div> 
      <div class="tw-foot"> 
       <div class="auto" id="Copyright"> 
-       <p> Copyright &copy; AI Humour 有限公司 </p> 
+       <p> Copyright &copy;AI Humour有限公司 </p> 
       </div> 
      </div> 
     </div> 

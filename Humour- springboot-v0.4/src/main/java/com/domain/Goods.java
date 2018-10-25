@@ -2,13 +2,25 @@ package com.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
 /**
  *商品详情表的实体类
  *
  */
+@Entity
+@Table(name = "goods")
+@Data  //lombok的注解
 public class Goods implements Serializable{
 	private static final long serialVersionUID = 1L;
-	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;//商品的id
 	private Small_Category small_category; //商品小类别的id
 	private String name; //商品的名字

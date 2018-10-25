@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%
+  String contextPath=request.getContextPath();
+%>
 <html>
 <head>
  <title>AI Humour-个人中心 - 首页</title>
@@ -29,7 +32,7 @@
          <li><a><span id="ctl00_ucheader_lit">${sessionScope.username}</span></a></li> 
          <li> <a href="login.jsp" rel="nofollow">退出</a><em>|</em> </li> 
          <li><a target="black" rel="nofollow" href="MemberIndexServlet">我的Humour</a><em>|</em></li> 
-         <li class="headed"><em class="icon shooping"></em><a target="black" rel="nofollow" href="com.services.Shopping_CartServlet?control=b">购物车</a><i></i></li>     
+         <li class="headed"><em class="icon shooping"></em><a target="black" rel="nofollow" href="../shopping_Cart/shoping_CartPage?control=b">购物车</a><i></i></li>     
        </ul> 
        </div> 
        <!--搜索框--> 
@@ -51,55 +54,33 @@
 					<li><a href="index.jsp">首页</a></li>
 					<li><a href="brand.jsp">幽默文化</a></li>
 					<li><a style="font-family: arial"
-						href="searchAction?classes=真爱之钻">真爱之钻</a>
+						href="<%=contextPath%>/Search/SearchController?classes=幽默的书">幽默的书</a>
 						<div class="nav-div">
 							<div class="navdiv_top">
 								<div class="navdiv-right">
 									<p>
-										<a href="searchAction?classes=真爱之钻"> 查看所有款</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=幽默的书"> 查看所有款</a>
 									</p>
 									<p>
-										<a href="searchAction?classes=恋人絮语">恋人絮语</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=中国式幽默">中国式幽默</a>
 									</p>
 									<p>
-										<a href="searchAction?classes=爱的轮回">爱的轮回</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=美国式幽默">美国式幽默</a>
 									</p>
 									<p>
-										<a href="searchAction?classes=爱之守护">爱之守护</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=德国式幽默">德国式幽默</a>
 									</p>
 									<p>
-										<a href="searchAction?classes=爱的星芒">爱的星芒</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=英国式幽默">英国式幽默</a>
+									</p>
+									<p>
+										<a href="<%=contextPath%>/Search/SearchController?classes=俄国式幽默">俄国式幽默</a>
 									</p>
 								</div>
 
 							</div>
 							<div class="navdiv_bottom"></div>
 						</div></li>
-					<li><a style="font-family: arial"
-						href="searchAction?classes=友谊之钻">友谊之钻</a>
-						<div class="nav-div">
-							<div class="navdiv_top">
-								<div class="navdiv-right special_right noborder">
-									<p>
-										<a href="searchAction?classes=友谊之钻">查看所有款</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=天使之吻">天使之吻</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=梦之幻想">梦之幻想</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=永恒之心">永恒之心</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=星月相伴">星月相伴</a>
-									</p>
-								</div>
-							</div>
-							<div class="navdiv_bottom"></div>
-						</div></li>
-
 				</ul>
      </div> 
     </div> 
@@ -124,25 +105,25 @@
         </div> 
         <div class="member_cort"> 
          <div class="member_cort-left fl"> 
-          <!--我的DR--> 
+          <!--我的Humour--> 
           <div class="member_cortleft-tittle"> 
            <i class="mb_home"></i>
-           <a rel="nofollow" href="member_index.jsp">我的L&amp;S</a> 
+           <a rel="nofollow" href="member_index.jsp">我的Humour</a> 
           </div> 
-          <!--我的DR end--> 
+          <!--我的Humour end--> 
           <ul class="member_cort-ul"> 
            <li> <h3> -订单中心-</h3> 
             <ul class="member_ul-dr"> 
-             <li id="ctl00_content_ucmemberleft_order"> <a rel="nofollow" href="com.services.OrdersServlet">我的订单</a></li> 
-             <li id="ctl00_content_ucmemberleft_ask"><a rel="nofollow" href="CommentServlet?flag=a">我要评价</a></li> 
-             <li id="ctl00_content_ucmemberleft_cart"><a rel="nofollow" href="com.services.Shopping_CartServlet?control=b">我的购物车</a></li> 
+             <li id="ctl00_content_ucmemberleft_order"> <a rel="nofollow" href="../orders/member_order">我的订单</a></li> 
+             <li id="ctl00_content_ucmemberleft_ask"><a rel="nofollow" href="../comment/commentList?flag=a">我要评价</a></li> 
+             <li id="ctl00_content_ucmemberleft_cart"><a rel="nofollow" href="../shopping_Cart/shoping_CartPage?control=b">我的购物车</a></li> 
             </ul> 
            </li> 
            <li> <h3> -帐户管理-</h3> 
             <ul class="member_ul-dr"> 
              <li id="ctl00_content_ucmemberleft_myinfo"><a rel="nofollow" href="../user/SelectMemberInfo">个人信息</a></li> 
              <li id="ctl00_content_ucmemberleft_password"><a rel="nofollow" href="member_pwd.jsp">修改密码</a></li> 
-             <li id="ctl00_content_ucmemberleft_address"><a rel="nofollow" href="SelectPname">收货地址</a></li> 
+             <li id="ctl00_content_ucmemberleft_address"><a rel="nofollow" href="../shopping/shopping_address">收货地址</a></li> 
             </ul> 
            </li> 
           </ul> 

@@ -47,25 +47,15 @@ public class SearchController {
 			//通过小类列表点击搜索
 			
 			//如果传回来的参数是大类名称的时候，显示所有内容
-			if(classes.equals("真爱之钻")){
-				System.out.println("真爱");
-				//搜索真爱之钻的全部内容
-				goodsBySearch=doSearchSmall(request, response, "恋人絮语");//搜索恋人絮语的内容
-				goodsBySearch.addAll(doSearchSmall(request, response, "爱的轮回"));//搜索爱的轮回的内容并添加到集合中
-				goodsBySearch.addAll(doSearchSmall(request, response, "爱之守护"));//搜索爱之守护的内容并添加到集合中
-				goodsBySearch.addAll(doSearchSmall(request, response, "爱的星芒"));//搜索爱的星芒的内容并添加到集合中
+			if(classes.equals("幽默的书")){
+				//搜索幽默的书的全部内容
+				goodsBySearch=doSearchSmall(request, response, "中国式幽默");//搜索恋人絮语的内容
+				goodsBySearch.addAll(doSearchSmall(request, response, "美国式幽默"));//搜索爱的轮回的内容并添加到集合中
+				goodsBySearch.addAll(doSearchSmall(request, response, "德国式幽默"));//搜索爱之守护的内容并添加到集合中
+				goodsBySearch.addAll(doSearchSmall(request, response, "英国式幽默"));//搜索爱的星芒的内容并添加到集合中
+				goodsBySearch.addAll(doSearchSmall(request, response, "俄国式幽默"));//搜索爱的星芒的内容并添加到集合中
 				session.setAttribute("big_category", doBigByBig(classes));//大类标题
 				session.setAttribute("small_category", doSmallByBig(classes));//传递对应小类集合
-				session.setAttribute("small", "");//传递小类名称
-			}else if(classes.equals("友谊之钻")){
-				System.out.println("友谊");
-				//搜索友谊之钻的全部内容
-				goodsBySearch=doSearchSmall(request, response, "天使之吻");//搜索天使之吻的内容
-				goodsBySearch.addAll(doSearchSmall(request, response, "梦之幻想"));//搜索梦之幻想的内容并添加到集合中
-				goodsBySearch.addAll(doSearchSmall(request, response, "永恒之心"));//搜索永恒之心的内容并添加到集合中
-				goodsBySearch.addAll(doSearchSmall(request, response, "星月相伴"));//搜索星月相伴的内容并添加到集合中
-				session.setAttribute("big_category", doBigByBig(classes));//大类标题
-				session.setAttribute("small_category", doSmallByBig(classes));
 				session.setAttribute("small", "");//传递小类名称
 			}else {
 				System.out.println("小类");
@@ -131,7 +121,7 @@ public class SearchController {
 	/*	long big_id=iscs.selectBig_idById(small_Category.getId());*/
 		long big_id=1;
 		big=ibcs.selectDBigByIdDao(big_id);
-		System.out.println(big+"eeeeeeeeeeee");
+		
 		return big;
 	}
 }

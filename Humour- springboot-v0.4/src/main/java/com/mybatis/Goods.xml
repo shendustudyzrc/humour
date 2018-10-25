@@ -11,4 +11,8 @@
  <select id="selectGoodsByName" parameterType="java.lang.String" resultType="Goods">
    SELECT * FROM goods WHERE  name LIKE #{name};
  </select>
+  <!-- 根据商品名进行查找 -->
+ <select id="selectGoodsByGoodsName" parameterType="java.lang.String" resultType="Goods">
+   select * from goods where name =#{name};
+ </select>
  </mapper>

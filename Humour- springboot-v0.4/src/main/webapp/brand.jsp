@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%
+  String contextPath=request.getContextPath();
+%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-<title>幽你AI默 -幽默文化</title>
+<title>脑洞网 -幽默文化</title>
 <link href="css/same.css?v=1.3.7.2" type="text/css" rel="stylesheet" /> 
 <link href="css/dr_culture.css?v=1.3.5.0" type="text/css" rel="stylesheet"> 
 </head>
@@ -16,8 +20,7 @@
     <div class="headtop"> 
      <!--头部左边--> 
      <div class="top-left fl"> 
-      <a title="Darry Ring" href="index.jsp"> <img width="287" height="62" alt="Darry Ring官网" src="images/logo1.jpg" /> </a>
-      
+      <a title="AI Humour" href="index.jsp"> <img width="287" height="62" alt="AI Humour" src="images/logo1.jpg" /> </a>
      </div> 
      <!--头部左边end--> 
      <!--头部右边--> 
@@ -25,9 +28,17 @@
       <!--登录注册--> 
       <div id="ucheader1_pllogin1"> 
       <ul class="tright-ul fl"> 
-        <li><a rel="nofollow" href="login.jsp">登录</a><em>|</em></li> 
-        <li><a rel="nofollow" href="reg.jsp">注册</a><em>|</em></li> 
-        <li><a rel="nofollow" href="MemberIndexServlet">我的LS</a></li>
+        <c:choose>
+					<c:when test="${sessionScope.username.length()>0}">
+					    <li><a><span id="ctl00_ucheader_lit">${sessionScope.username}</span></a></li> 
+                        <li><a href="login.jsp" rel="nofollow">退出</a><em>|</em> </li>
+					</c:when>
+					<c:otherwise>
+						<li><a rel="nofollow" href="login.jsp">登录</a><em>|</em></li>
+						<li><a rel="nofollow" href="reg.jsp">注册</a><em>|</em></li>
+					</c:otherwise>
+		</c:choose>
+        <li><a rel="nofollow" href="member_index.jsp">我的Humour</a></li>
         <li class="headed"><em class="icon shooping"></em><a target="black" rel="nofollow" href="com.services.Shopping_CartServlet?control=b">购物车</a><i></i></li> 
       </ul> 
       </div>
@@ -45,51 +56,27 @@
 					<li><a href="index.jsp">首页</a></li>
 					<li><a href="brand.jsp">幽默文化</a></li>
 					<li><a style="font-family: arial"
-						href="searchAction?classes=名人事迹">名人事迹</a>
+						href="searchAction?classes=幽默的书">幽默的书</a>
 						<div class="nav-div">
 							<div class="navdiv_top">
 								<div class="navdiv-right">
 									<p>
-										<a href="searchAction?classes=真爱之钻"> 查看所有款</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=幽默的书"> 查看所有款</a>
 									</p>
 									<p>
-										<a href="searchAction?classes=恋人絮语">恋人絮语</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=中国式幽默">中国式幽默</a>
 									</p>
 									<p>
-										<a href="searchAction?classes=爱的轮回">爱的轮回</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=美国式幽默">美国式幽默</a>
 									</p>
 									<p>
-										<a href="searchAction?classes=爱之守护">爱之守护</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=德国式幽默">德国式幽默</a>
 									</p>
 									<p>
-										<a href="searchAction?classes=爱的星芒">爱的星芒</a>
+										<a href="<%=contextPath%>/Search/SearchController?classes=英国式幽默">英国式幽默</a>
 									</p>
 								</div>
 
-							</div>
-							<div class="navdiv_bottom"></div>
-						</div></li>
-					<li><a style="font-family: arial"
-						href="searchAction?classes=幽默的书">幽默的书</a>
-						<div class="nav-div">
-							<div class="navdiv_top">
-								<div class="navdiv-right special_right noborder">
-									<p>
-										<a href="searchAction?classes=友谊之钻">查看所有款</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=天使之吻">天使之吻</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=梦之幻想">梦之幻想</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=永恒之心">永恒之心</a>
-									</p>
-									<p>
-										<a href="searchAction?classes=星月相伴">星月相伴</a>
-									</p>
-								</div>
 							</div>
 							<div class="navdiv_bottom"></div>
 						</div></li>
